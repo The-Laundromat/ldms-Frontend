@@ -1,0 +1,17 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+    <div class="row">
+      <button (click)="onSideDrawerBtnClick()" class="col btn btn-outline-primary d-flex justify-content-center">
+        <mat-icon class="align-self-center" aria-hidden="false">{{menuBtnIcon}}</mat-icon>
+      </button>
+      <!-- Add title -->
+      <a class="navbar-brand float-start col" href="#">The Laundromat</a>
+      <!-- Burger button when in the responsive mode -->
+      <button class="navbar-toggler float-end" type="button" data-toggle="collapse" data-target="#navbarNav"
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+    <button (click)="onLoginBtnClick()" class="btn btn-outline-primary float-end" type="button">Login</button>
+  </div>
+</nav>
