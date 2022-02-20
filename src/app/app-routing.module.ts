@@ -5,13 +5,21 @@ import {AuthComponent} from "./auth/auth.component";
 import {ForgotPasswordComponent} from "./auth/forgot-password/forgot-password.component";
 import {LoginComponent} from "./auth/login/login.component";
 import {UserComponent} from "./user/user.component";
+import {AuthGuardService} from "./auth/auth-guard.service";
 
 const routes: Routes = [
-  {path: 'login', component: AuthComponent, children: [
+  {
+    path: 'login', component: AuthComponent, children: [
       {path: '', component: LoginComponent},
       {path: 'forgot-password', component: ForgotPasswordComponent}
-    ]},
-  {path: 'user', component: UserComponent},
+    ]
+  },
+  {
+    path: 'user',
+    canActivate:[AuthGuardService],
+    component: UserComponent
+  },
+  {path:'**',redirectTo:'/'},
   {path: '', component: IntroComponent}
 ];
 
