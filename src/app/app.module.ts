@@ -17,6 +17,7 @@ import {UserComponent} from './user/user.component';
 import {MatSidenavModule} from "@angular/material/sidenav";
 import { SideNavbarComponent } from './shared/side-navbar/side-navbar.component';
 import { UserNavbarComponent } from './user/shared/user-navbar/user-navbar.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -30,15 +31,17 @@ import { UserNavbarComponent } from './user/shared/user-navbar/user-navbar.compo
     AccountComponent,
     UserComponent,
     SideNavbarComponent,
-    UserNavbarComponent,
+    UserNavbarComponent
   ],
   imports: [
+    FormsModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatToolbarModule,
     MatSidenavModule,
     MatIconModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
