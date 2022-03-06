@@ -7,8 +7,4 @@ import {Component} from '@angular/core';
 })
 export class AppComponent {
   title = 'ldms-frontend';
-
-  toggleSideDrawer(sideNav: any) {
-    sideNav.drawer.toggle();
-  }
 }
