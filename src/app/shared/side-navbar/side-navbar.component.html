@@ -1,7 +1,26 @@
 <mat-drawer-container class="container-fluid h-100 w-100 p-0" autosize>
-  <mat-drawer #drawer class="sidenav shadow" mode="side">
-    <div class="container-fluid">
-   </div>
+  <mat-drawer #drawer [opened]="sideNavVisibility" [disableClose]="sideNavVisibility"
+              class="sidenav shadow bg-white p-0" mode="side">
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+
+      <div class="container-fluid">
+        <div class="d-flex flex-row align-items-center">
+          <div class="d-flex pe-3">
+            <img class="card-img-top logo-image" src="../../../assets/images/ldms-logo/Logo.png"
+                 alt="Card image cap">
+          </div>
+          <div class="d-block justify-content-center align-items-center text-white">
+            Tha Laundromat
+          </div>
+        </div>
+        <a (click)="drawerCloseBtnOnClick()" class="btn-sm justify-content-center float-end app-cursor-pointer">
+          <mat-icon class="align-self-center text-white" aria-hidden="false">more_vert</mat-icon>
+        </a>
+      </div>
+    </nav>
+    <div class="sidenav">
+
+    </div>
   </mat-drawer>
   <ng-content></ng-content>
 </mat-drawer-container>

@@ -1,4 +1,9 @@
 .sidenav {
   padding: 20px;
   width: 280px;
+  min-width: 50px;
+}
+
+img.logo-image{
+  width: 35px;
 }
