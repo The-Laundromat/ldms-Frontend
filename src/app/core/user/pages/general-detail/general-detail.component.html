@@ -1,3 +1,60 @@
-<div class="container">
-  <p>general-detail works!</p>
+<div class="container pt-4">
+  <div class="row">
+    <!--For profile pic-->
+    <div class="col-md-3">
+      <p class="text-muted">Profile Picture</p>
+      <hr>
+      <div class="d-flex flex-column justify-content-center">
+        <img src="assets/images/user/userSampleImage.png" class="border border1-1 shadow-sm border-primary" height="300" alt="Profile-Picture">
+        <button class="btn btn-sm btn-outline-primary mt-2">CHANGE PICTURE</button>
+      </div>
+    </div>
+    <!--For detail-->
+    <div class="col-md-8">
+      <p class="text-muted">User Detail</p>
+      <hr>
+      <form>
+        <div class="form-row row">
+          <div class="col-md-6 mb-3">
+            <label for="user-first-name">First name</label>
+            <input type="text" class="form-control" [ngClass]="{'is-invalid':false}" id="user-first-name"
+                   placeholder="First name"
+                   value="" required>
+            <div class="valid-feedback d-none">
+              Please enter valid detail.
+            </div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="user-last-name">Last Name</label>
+            <input type="text" class="form-control" id="user-last-name" placeholder="Last name"
+                   value="" required>
+            <div class="valid-feedback d-none">
+              Please enter valid detail.
+            </div>
+          </div>
+        </div>
+        <div class="form-row row">
+          <div class="col-md-6 mb-3">
+            <label for="user-designation">Designation</label>
+            <input type="text" class="form-control" [ngClass]="{'is-invalid':false}" id="user-designation"
+                   placeholder="Designation"
+                   value="" required>
+            <div class="valid-feedback d-none">
+              Please enter valid detail.
+            </div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="user-contact-number">Contact Number</label>
+            <input type="text" class="form-control" id="user-contact-number" placeholder="Contact number"
+                   value="" required>
+            <div class="valid-feedback d-none">
+              Please enter valid detail.
+            </div>
+          </div>
+        </div>
+        <button class="btn btn-primary" type="submit">UPDATE</button>
+      </form>
+    </div>
+
+  </div>
 </div>
