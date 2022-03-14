@@ -4,11 +4,12 @@ import {IntroComponent} from "./core/intro/intro.component";
 import {AuthComponent} from "./core/auth/auth.component";
 import {ForgotPasswordComponent} from "./core/auth/forgot-password/forgot-password.component";
 import {LoginComponent} from "./core/auth/login/login.component";
-import {UserComponent} from "./core/user/user.component";
-import {GeneralDetailComponent} from "./core/user/pages/general-detail/general-detail.component";
-import {ActivityHistoryComponent} from "./core/user/pages/activity-history/activity-history.component";
-import {LoginDetailComponent} from "./core/user/pages/login-detail/login-detail.component";
-import {AppSettingsComponent} from "./core/user/pages/app-settings/app-settings.component";
+import {UserComponent} from "./epics/user/user.component";
+import {GeneralDetailComponent} from "./epics/user/branches/general-detail/general-detail.component";
+import {ActivityHistoryComponent} from "./epics/user/branches/activity-history/activity-history.component";
+import {LoginDetailComponent} from "./epics/user/branches/login-detail/login-detail.component";
+import {AppSettingsComponent} from "./epics/user/branches/app-settings/app-settings.component";
+import {AuthMainComponent} from "./core/auth/auth-main/auth-main.component";
 
 const routes: Routes = [
   {
@@ -18,17 +19,26 @@ const routes: Routes = [
     ]
   },
   {
-    path: 'user',
-    component: UserComponent,
-    children:[
-      {path: 'general-detail', component: GeneralDetailComponent},
-      {path: 'activity-history', component: ActivityHistoryComponent},
-      {path: 'login-detail', component: LoginDetailComponent},
-      {path: 'app-settings', component: AppSettingsComponent}
+    path: 'intro',
+    component: IntroComponent,
+  },
+  {
+    path: '',
+    component: AuthMainComponent,
+    children: [
+      {
+        path: 'user',
+        component: UserComponent,
+        children: [
+          {path: 'general-detail', component: GeneralDetailComponent},
+          {path: 'activity-history', component: ActivityHistoryComponent},
+          {path: 'login-detail', component: LoginDetailComponent},
+          {path: 'app-settings', component: AppSettingsComponent}
+        ]
+      }
     ]
   },
   {path: '**', redirectTo: '/'},
-  {path: '', component: IntroComponent}
 ];
 
 @NgModule({

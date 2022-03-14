@@ -10,21 +10,14 @@ import {SideNavbarService} from "../side-navbar/side-navbar.service";
 })
 export class NavbarComponent implements OnInit {
   menuBtnIcon:boolean;
-  sideNavVisibility:boolean;
 
   constructor(private router: Router, private authService: AuthService, private sideNavBarService: SideNavbarService) {
     this.menuBtnIcon = sideNavBarService.sideNavStatus;
-    this.sideNavVisibility = sideNavBarService.sideNavAuthStatus;
   }
 
   ngOnInit(): void {
     this.sideNavBarService.sideNavToggle.subscribe(toggleStatus=>{
       this.menuBtnIcon = toggleStatus;
-    })
-
-    this.sideNavBarService.sideNavAuth.subscribe(value=>{
-      this.sideNavVisibility = value;
-      this.menuBtnIcon = this.sideNavBarService.sideNavStatus;
     })
   }
 

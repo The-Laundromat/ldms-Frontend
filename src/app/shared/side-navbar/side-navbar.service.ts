@@ -8,23 +8,9 @@ import {Subject} from "rxjs";
 export class SideNavbarService {
   sideNavStatus: boolean;
   sideNavToggle = new EventEmitter<boolean>();
-  sideNavAuth = new Subject<boolean>();
-  sideNavAuthStatus: boolean;
 
-
-  constructor(private authService: AuthService) {
+  constructor() {
     this.sideNavStatus = false;
-    this.sideNavAuthStatus = !!authService.getLoggedInUser()
-
-    this.authService.authChangeEvent.subscribe(user => {
-      if (user) {
-        this.sideNavAuth.next(true)
-      } else {
-        this.sideNavStatus = false;
-        this.sideNavAuthStatus = false;
-        this.sideNavAuth.next(false)
-      }
-    })
   }
 
   toggleSideDrawer() {

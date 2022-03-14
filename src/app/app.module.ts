@@ -12,15 +12,16 @@ import {SlideshowComponent} from './core/intro/slideshow/slideshow.component';
 import {AuthComponent} from './core/auth/auth.component';
 import {LoginComponent} from './core/auth/login/login.component';
 import {ForgotPasswordComponent} from './core/auth/forgot-password/forgot-password.component';
-import {UserComponent} from './core/user/user.component';
+import {UserComponent} from './epics/user/user.component';
 import {MatSidenavModule} from "@angular/material/sidenav";
 import { SideNavbarComponent } from './shared/side-navbar/side-navbar.component';
-import { UserNavbarComponent } from './core/user/shared/user-navbar/user-navbar.component';
+import { UserNavbarComponent } from './epics/user/shared/user-navbar/user-navbar.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import { GeneralDetailComponent } from './core/user/pages/general-detail/general-detail.component';
-import { ActivityHistoryComponent } from './core/user/pages/activity-history/activity-history.component';
-import { LoginDetailComponent } from './core/user/pages/login-detail/login-detail.component';
-import { AppSettingsComponent } from './core/user/pages/app-settings/app-settings.component';
+import { GeneralDetailComponent } from './epics/user/branches/general-detail/general-detail.component';
+import { ActivityHistoryComponent } from './epics/user/branches/activity-history/activity-history.component';
+import { LoginDetailComponent } from './epics/user/branches/login-detail/login-detail.component';
+import { AppSettingsComponent } from './epics/user/branches/app-settings/app-settings.component';
+import { AuthMainComponent } from './core/auth/auth-main/auth-main.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { AppSettingsComponent } from './core/user/pages/app-settings/app-setting
     GeneralDetailComponent,
     ActivityHistoryComponent,
     LoginDetailComponent,
-    AppSettingsComponent
+    AppSettingsComponent,
+    AuthMainComponent
   ],
   imports: [
     FormsModule,

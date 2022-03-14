@@ -12,7 +12,7 @@ export class AuthService {
   private loggedInUser?: User;
   private readonly userGroupPolicies: USerGroupPolicy[] | undefined;
   private userChange: Subject<User> = new Subject<User>();
-  authChangeEvent = new EventEmitter<User|false>();
+  authChangeEvent = new EventEmitter<User | false>();
 
   constructor(private router: Router) {
     this.userGroupPolicies = undefined;
@@ -21,7 +21,12 @@ export class AuthService {
     })
   }
 
+  public getAuthStatus(): boolean {
+    return !!this.loggedInUser
+  }
+
   public getLoggedInUser(): User | boolean {
+    this.basicLogin();
     return !!this.loggedInUser
   }
 
@@ -31,7 +36,7 @@ export class AuthService {
       this._userDetailStoreInLocalStorage(loginResult.data.authData, loginResult.data.authData.authToken)
       this.authChangeEvent.emit(this.loggedInUser)
       return true;
-    }else {
+    } else {
       return false
     }
   }
@@ -49,7 +54,7 @@ export class AuthService {
           this._userDetailStoreInLocalStorage(loginResult.data.authData, loginResult.data.authData.authToken)
           this.authChangeEvent.emit(this.loggedInUser)
           return true;
-        }else {
+        } else {
           return false
         }
       } else {
@@ -59,13 +64,13 @@ export class AuthService {
   }
 
   private _userDetailStoreInLocalStorage(user: User, userToken: string): boolean {
-      this.userChange.next(user);
-      for (const userGroups of user.userGroups) {
-        userGroups.userPolicies.map(policy => this.userGroupPolicies?.push(policy));
-      }
-      localStorage.setItem('loggedInUserToken', userToken)
-      localStorage.setItem('loggedInUserEmail', user.email)
-      return true;
+    this.userChange.next(user);
+    for (const userGroups of user.userGroups) {
+      userGroups.userPolicies.map(policy => this.userGroupPolicies?.push(policy));
+    }
+    localStorage.setItem('loggedInUserToken', userToken)
+    localStorage.setItem('loggedInUserEmail', user.email)
+    return true;
   }
 
   public signOut(): void {

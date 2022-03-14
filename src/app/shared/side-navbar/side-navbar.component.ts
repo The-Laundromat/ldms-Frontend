@@ -11,16 +11,12 @@ export class SideNavbarComponent implements OnInit {
   sideNavVisibility:boolean;
 
   constructor(private navbarService: SideNavbarService) {
-    this.sideNavVisibility = navbarService.sideNavAuthStatus;
+    this.sideNavVisibility = true;
   }
 
   ngOnInit(): void {
     this.navbarService.sideNavToggle.subscribe(() => {
       this.toggleSideDrawer();
-    })
-
-    this.navbarService.sideNavAuth.subscribe(value=>{
-      this.sideNavVisibility = value;
     })
   }
 

@@ -8,9 +8,7 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class
-
-LoginComponent implements OnInit {
+export class LoginComponent implements OnInit {
 
   loginForm = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
@@ -21,12 +19,17 @@ LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.authService.authChangeEvent.subscribe(value => {
+      if (value) {
+        this.router.navigate(['/user'])
+      }
+    })
   }
 
   onSubmit() {
     if (this.loginForm.valid) {
       const loginData = this.loginForm.value;
-      this.authService.loginUsingBasicCredentials(loginData.email, loginData.password) ? this.router.navigate(['/user']) : null;
+      this.authService.loginUsingBasicCredentials(loginData.email, loginData.password);
     } else {
       this.loginForm.updateValueAndValidity()
     }
