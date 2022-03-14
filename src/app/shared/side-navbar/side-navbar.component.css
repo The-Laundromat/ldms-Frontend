@@ -11,3 +11,14 @@ img.logo-image{
 img.logo-lmat{
   width: 140px;
 }
+
+/*!* Hide scrollbar for Chrome, Safari and Opera *!*/
+/*.app-hide-scrollbar::-webkit-scrollbar {*/
+/*  display: none;*/
+/*}*/
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.app-hide-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
