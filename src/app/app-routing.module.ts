@@ -5,11 +5,8 @@ import {AuthComponent} from "./core/auth/auth.component";
 import {ForgotPasswordComponent} from "./core/auth/forgot-password/forgot-password.component";
 import {LoginComponent} from "./core/auth/login/login.component";
 import {UserComponent} from "./epics/user/user.component";
-import {GeneralDetailComponent} from "./epics/user/branches/general-detail/general-detail.component";
-import {ActivityHistoryComponent} from "./epics/user/branches/activity-history/activity-history.component";
-import {LoginDetailComponent} from "./epics/user/branches/login-detail/login-detail.component";
-import {AppSettingsComponent} from "./epics/user/branches/app-settings/app-settings.component";
 import {AuthMainComponent} from "./core/auth/auth-main/auth-main.component";
+import {HelpPagesComponent} from "./epics/help-pages/help-pages.component";
 
 const routes: Routes = [
   {
@@ -29,12 +26,12 @@ const routes: Routes = [
       {
         path: 'user',
         component: UserComponent,
-        children: [
-          {path: 'general-detail', component: GeneralDetailComponent},
-          {path: 'activity-history', component: ActivityHistoryComponent},
-          {path: 'login-detail', component: LoginDetailComponent},
-          {path: 'app-settings', component: AppSettingsComponent}
-        ]
+        loadChildren:()=>import('./epics/user/user.module').then(m=>m.UserModule)
+      },
+      {
+        path: 'help-pages',
+        component: HelpPagesComponent,
+        loadChildren: () => import('./epics/help-pages/help-pages.module').then(m => m.HelpPagesModule)
       }
     ]
   },

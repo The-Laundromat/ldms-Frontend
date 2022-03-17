@@ -10,15 +10,9 @@
     <div class="d-flex flex-row-reverse">
       <div *ngIf="getAuthUser()" class="dropdown">
         <button class="btn btn-outline-light pb-0 border-0 shadow-none" type="button" id="dropdownMenuButton1"
-                data-bs-toggle="dropdown" aria-expanded="false">
+                data-bs-toggle="dropdown" aria-expanded="false" routerLink="help-pages">
           <mat-icon class="">info</mat-icon>
         </button>
-        <ul class="dropdown-menu dropdown-menu-end mt-2" aria-labelledby="dropdownMenuButton1">
-          <li><a class="dropdown-item" href="#">Account Settings</a></li>
-          <li><a class="dropdown-item" href="#">Activity History</a></li>
-          <hr>
-          <li><a class="dropdown-item" (click)="onSignOutBtnClick()">Sign out</a></li>
-        </ul>
       </div>
 
       <div *ngIf="getAuthUser()" class="dropdown">
@@ -28,7 +22,7 @@
         </button>
         <ul class="dropdown-menu dropdown-menu-end mt-2 pb-0" aria-labelledby="nav-main-dropdown-info-btn">
           <div class="d-flex flex-row-reverse" style="margin-top: -25px; margin-right: 15px; z-index: 2000">
-            <mat-icon style="color: white; font-size: 30px" color="white" >eject</mat-icon>
+            <mat-icon style="color: white; font-size: 30px" color="white">eject</mat-icon>
           </div>
           <div class="d-flex flex-column align-items-center m-2">
             <img class="m-2" style="border-radius: 360px" src="assets/images/user/userSampleImage.png" width="60">
@@ -37,15 +31,24 @@
             <p class="text-black text-opacity-75" style="font-size: 12px">lahirug@laundromat.lk</p>
           </div>
           <hr>
-          <li><a class="dropdown-item" href="#">
-            <div class="d-flex flex-row justify-content-between">
-              <mat-icon class="me-2">settings</mat-icon>
-              <label>Account Settings</label>
-            </div>
-          </a>
+          <li>
+            <a class="dropdown-item" routerLink="user/general-detail">
+              <div class="d-flex flex-row justify-content-start">
+                <mat-icon class="me-2">person</mat-icon>
+                <label>General Details</label>
+              </div>
+            </a>
           </li>
           <li>
-            <a class="dropdown-item" href="#">
+            <a class="dropdown-item" routerLink="user/app-settings">
+              <div class="d-flex flex-row justify-content-start">
+                <mat-icon class="me-2">settings</mat-icon>
+                <label>App Settings</label>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item" routerLink="user/activity-history">
               <div class="d-flex flex-row justify-content-start">
                 <mat-icon class="me-2">history</mat-icon>
                 <label>Activity History</label>
