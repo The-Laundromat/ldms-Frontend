@@ -1,4 +1,4 @@
-import {User} from "../../app/core/auth/models/auth.model";
+import {User} from "../../app/models/auth.model";
 
 export interface BasicAuthLoginResponse {
   data:{

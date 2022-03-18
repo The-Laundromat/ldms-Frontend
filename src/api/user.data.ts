@@ -1,4 +1,4 @@
-import {User} from "../app/core/auth/models/auth.model";
+import {User} from "../app/models/auth.model";
 import {BasicAuthLoginResponse} from "./models/responsePayloads.models";
 
 export const USERDATA: User[] = [{

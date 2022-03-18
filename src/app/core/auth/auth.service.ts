@@ -1,6 +1,6 @@
 import {EventEmitter, Injectable} from '@angular/core';
 import {api_checkUserToken, api_LoginFunction} from "../../../api/user.data";
-import {User, USerGroupPolicy} from "./models/auth.model";
+import {User, USerGroupPolicy} from "../../models/auth.model";
 import {Router} from "@angular/router";
 import {Subject} from "rxjs";
 
