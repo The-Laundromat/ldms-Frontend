@@ -4,7 +4,7 @@ import {SideNavbarService} from "./side-navbar.service";
 @Component({
   selector: 'app-side-navbar',
   templateUrl: './side-navbar.component.html',
-  styleUrls: ['./side-navbar.component.css']
+  styleUrls: ['./side-navbar.component.scss']
 })
 export class SideNavbarComponent implements OnInit {
   @ViewChild('drawer') drawer: ElementRef | any;
