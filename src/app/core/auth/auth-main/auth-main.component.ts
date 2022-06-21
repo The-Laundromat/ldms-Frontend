@@ -13,9 +13,9 @@ export class AuthMainComponent implements OnInit {
 
   ngOnInit(): void {
     if(this.authService.getLoggedInUser()){
-      this.router.navigate(['/user'])
+      void this.router.navigate(['/user'])
     }else{
-      this.router.navigate(['/login'])
+      void this.router.navigate(['/login'])
     }
   }
 

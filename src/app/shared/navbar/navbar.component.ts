@@ -5,8 +5,7 @@ import {SideNavbarService} from "../side-navbar/side-navbar.service";
 
 @Component({
   selector: 'app-navbar',
-  templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.scss']
+  templateUrl: './navbar.component.html'
 })
 export class NavbarComponent implements OnInit {
   menuBtnIcon:boolean;

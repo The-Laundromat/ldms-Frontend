@@ -8,13 +8,13 @@ import {SideNavbarService} from "./side-navbar.service";
 })
 export class SideNavbarComponent implements OnInit {
   @ViewChild('drawer') drawer: ElementRef | any;
-  sideNavVisibility:boolean;
+
+  public sideNavVisibility:boolean = true;
 
   constructor(private navbarService: SideNavbarService) {
-    this.sideNavVisibility = true;
   }
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
     this.navbarService.sideNavToggle.subscribe(() => {
       this.toggleSideDrawer();
     })
@@ -24,7 +24,7 @@ export class SideNavbarComponent implements OnInit {
     this.drawer.toggle();
   }
 
-  drawerCloseBtnOnClick(){
+  public onDrawerClose(){
     this.navbarService.toggleSideDrawer();
   }
 }
