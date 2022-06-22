@@ -102,7 +102,7 @@
       <div class="d-flex flex-column flex-shrink-0 p-3">
         <ul class="nav nav-pills flex-column mb-auto mt-4">
           <li class="nav-item">
-            <a href="#" class="nav-link active" aria-current="page">
+            <a href="#" class="nav-link link-dark" aria-current="page">
               <svg class="bi me-2" width="16" height="16">
                 <use xlink:href="#home"></use>
               </svg>
@@ -118,7 +118,7 @@
             </a>
           </li>
           <li>
-            <a href="#" class="nav-link link-dark">
+            <a [routerLink]="['/reports-and-analysis']" routerLinkActive="active" class="nav-link link-dark">
               <svg class="bi me-2" width="16" height="16">
                 <use xlink:href="#reports-analysis"></use>
               </svg>

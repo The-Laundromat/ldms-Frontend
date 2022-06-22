@@ -15,7 +15,7 @@ import {ForgotPasswordComponent} from './core/auth/forgot-password/forgot-passwo
 import {MatSidenavModule} from "@angular/material/sidenav";
 import { SideNavbarComponent } from './shared/side-navbar/side-navbar.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import { AuthMainComponent } from './core/auth/auth-main/auth-main.component';
+import { MainComponent } from './core/main/main.component';
 import { DropdownMenuComponent } from './shared/dropdown-menu/dropdown-menu.component';
 
 @NgModule({
@@ -28,7 +28,7 @@ import { DropdownMenuComponent } from './shared/dropdown-menu/dropdown-menu.comp
     LoginComponent,
     ForgotPasswordComponent,
     SideNavbarComponent,
-    AuthMainComponent,
+    MainComponent,
     DropdownMenuComponent,
   ],
   imports: [

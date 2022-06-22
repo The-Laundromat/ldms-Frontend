@@ -9,7 +9,7 @@ import {Subject} from "rxjs";
 })
 export class AuthService {
 
-  private loggedInUser?: User;
+  private loggedInUser?: User | null;
   private readonly userGroupPolicies: USerGroupPolicy[] | undefined;
   private userChange: Subject<User> = new Subject<User>();
   authChangeEvent = new EventEmitter<User | false>();
@@ -21,7 +21,7 @@ export class AuthService {
     })
   }
 
-  public getAuthStatus(): boolean {
+  public isAuthenticated(): boolean {
     return !!this.loggedInUser
   }
 
@@ -34,10 +34,10 @@ export class AuthService {
     const loginResult = api_LoginFunction(email, password);
     if (loginResult.data.authSuccess && loginResult.data.authData) {
       this._userDetailStoreInLocalStorage(loginResult.data.authData, loginResult.data.authData.authToken)
-      this.authChangeEvent.emit(this.loggedInUser)
+      this.authChangeEvent.emit(this.loggedInUser ?? false)
       return true;
     } else {
-      return false
+      return false;
     }
   }
 
@@ -52,10 +52,10 @@ export class AuthService {
         const loginResult = api_checkUserToken(localStore_userEmail, localStore_userToken);
         if (loginResult.data.authSuccess && loginResult.data.authData) {
           this._userDetailStoreInLocalStorage(loginResult.data.authData, loginResult.data.authData.authToken)
-          this.authChangeEvent.emit(this.loggedInUser)
+          this.authChangeEvent.emit(this.loggedInUser ?? false)
           return true;
         } else {
-          return false
+          return false;
         }
       } else {
         return false;
@@ -75,8 +75,8 @@ export class AuthService {
 
   public signOut(): void {
     localStorage.clear()
-    this.loggedInUser = undefined;
+    this.loggedInUser = null;
     this.authChangeEvent.emit(false);
-    this.router.navigate(['/login'])
+    void this.router.navigate(['/login']);
   }
 }

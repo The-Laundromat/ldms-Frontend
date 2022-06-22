@@ -5,9 +5,10 @@ import {AuthComponent} from "./core/auth/auth.component";
 import {ForgotPasswordComponent} from "./core/auth/forgot-password/forgot-password.component";
 import {LoginComponent} from "./core/auth/login/login.component";
 import {UserComponent} from "./epics/user/user.component";
-import {AuthMainComponent} from "./core/auth/auth-main/auth-main.component";
+import {MainComponent} from "./core/main/main.component";
 import {HelpPagesComponent} from "./epics/help-pages/help-pages.component";
 import {ReportsAndAnalysisComponent} from "./epics/reports-and-analysis/reports-and-analysis.component";
+import {MainGuard} from "./core/main/main.guard";
 
 const routes: Routes = [
   {
@@ -24,7 +25,8 @@ const routes: Routes = [
   },
   {
     path: '',
-    component: AuthMainComponent,
+    component: MainComponent,
+    canActivate: [MainGuard],
     children: [
       {
         path: 'user',
