@@ -110,5 +110,7 @@
       "style": "scss"
     }
   },
-  "defaultProject": "ldms-frontend"
+  "cli": {
+    "analytics": false
+  }
 }
