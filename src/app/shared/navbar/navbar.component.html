@@ -14,11 +14,10 @@
           <mat-icon class="">info</mat-icon>
         </button>
       </div>
-
       <div *ngIf="getAuthUser()" class="dropdown">
         <button class="btn btn-outline-light pb-0 border-0 shadow-none" type="button" id="nav-main-dropdown-info-btn"
                 data-bs-toggle="dropdown" aria-expanded="false">
-          <mat-icon class="">account_circle</mat-icon>
+          <mat-icon>account_circle</mat-icon>
         </button>
         <ul class="dropdown-menu dropdown-menu-end mt-2 pb-0" aria-labelledby="nav-main-dropdown-info-btn">
           <div class="d-flex flex-row-reverse" style="margin-top: -25px; margin-right: 15px; z-index: 2000">
@@ -60,6 +59,12 @@
             Sign Out
           </a></li>
         </ul>
+      </div>
+      <div>
+        <button class="btn btn-outline-light pb-0 border-0 shadow-none" type="button" id="dropdown-settings-btn"
+                aria-expanded="false">
+          <mat-icon>handyman</mat-icon>
+        </button>
       </div>
     </div>
 
