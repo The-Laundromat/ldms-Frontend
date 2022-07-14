@@ -29,16 +29,19 @@ const routes: Routes = [
     canActivate: [MainGuard],
     children: [
       {
+        title: 'LDMS - User',
         path: 'user',
         component: UserComponent,
         loadChildren:()=>import('./epics/user/user.module').then(m=>m.UserModule)
       },
       {
+        title: 'LDMS - Help',
         path: 'help-pages',
         component: HelpPagesComponent,
         loadChildren: () => import('./epics/help-pages/help-pages.module').then(m => m.HelpPagesModule)
       },
       {
+        title: 'LDMS - Reports & Analysis',
         path: 'reports-and-analysis',
         component: ReportsAndAnalysisComponent,
         loadChildren: () => import('./epics/reports-and-analysis/reports-and-analysis.module').then(m => m.ReportsAndAnalysisModule)

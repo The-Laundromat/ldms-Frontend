@@ -8,7 +8,7 @@ import {SideNavbarService} from "../side-navbar/side-navbar.service";
   templateUrl: './navbar.component.html'
 })
 export class NavbarComponent implements OnInit {
-  menuBtnIcon:boolean;
+  public menuBtnIcon:boolean;
 
   constructor(private router: Router, private authService: AuthService, private sideNavBarService: SideNavbarService) {
     this.menuBtnIcon = sideNavBarService.sideNavStatus;
