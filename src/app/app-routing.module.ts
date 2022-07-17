@@ -9,6 +9,7 @@ import {MainComponent} from "./core/main/main.component";
 import {HelpPagesComponent} from "./epics/help-pages/help-pages.component";
 import {ReportsAndAnalysisComponent} from "./epics/reports-and-analysis/reports-and-analysis.component";
 import {MainGuard} from "./core/main/main.guard";
+import {RetailOperationsComponent} from "./epics/retail-operations/retail-operations.component";
 
 const routes: Routes = [
   {
@@ -32,7 +33,7 @@ const routes: Routes = [
         title: 'LDMS - User',
         path: 'user',
         component: UserComponent,
-        loadChildren:()=>import('./epics/user/user.module').then(m=>m.UserModule)
+        loadChildren: () => import('./epics/user/user.module').then(m => m.UserModule)
       },
       {
         title: 'LDMS - Help',
@@ -45,6 +46,12 @@ const routes: Routes = [
         path: 'reports-and-analysis',
         component: ReportsAndAnalysisComponent,
         loadChildren: () => import('./epics/reports-and-analysis/reports-and-analysis.module').then(m => m.ReportsAndAnalysisModule)
+      },
+      {
+        title: 'LDMS - Retail Operations',
+        path: 'retail-operations',
+        component: RetailOperationsComponent,
+        loadChildren: () => import('./epics/retail-operations/retail-operations.module').then(m => m.RetailOperationsModule)
       }
     ]
   },

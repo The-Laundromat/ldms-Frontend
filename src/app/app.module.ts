@@ -13,10 +13,12 @@ import {AuthComponent} from './core/auth/auth.component';
 import {LoginComponent} from './core/auth/login/login.component';
 import {ForgotPasswordComponent} from './core/auth/forgot-password/forgot-password.component';
 import {MatSidenavModule} from "@angular/material/sidenav";
-import { SideNavbarComponent } from './shared/side-navbar/side-navbar.component';
+import {SideNavbarComponent} from './shared/side-navbar/side-navbar.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import { MainComponent } from './core/main/main.component';
-import { DropdownMenuComponent } from './shared/dropdown-menu/dropdown-menu.component';
+import {MainComponent} from './core/main/main.component';
+import {DropdownMenuComponent} from './shared/dropdown-menu/dropdown-menu.component';
+import {RetailOperationsComponent} from './epics/retail-operations/retail-operations.component';
+import {RetailOperationsModule} from "./epics/retail-operations/retail-operations.module";
 
 @NgModule({
   declarations: [
@@ -30,6 +32,7 @@ import { DropdownMenuComponent } from './shared/dropdown-menu/dropdown-menu.comp
     SideNavbarComponent,
     MainComponent,
     DropdownMenuComponent,
+    RetailOperationsComponent,
   ],
   imports: [
     FormsModule,
@@ -40,6 +43,7 @@ import { DropdownMenuComponent } from './shared/dropdown-menu/dropdown-menu.comp
     MatSidenavModule,
     MatIconModule,
     ReactiveFormsModule,
+    RetailOperationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
